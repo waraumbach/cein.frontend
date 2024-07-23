@@ -2,22 +2,25 @@ import { useState } from 'react'
 
 
 
+
 function NavBar() {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+   
     const [isOpen, setIsOpen] = useState(false);
-   
-   
+    
+    
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen) // !false = true 
+       
         setIsOpen(!isOpen)
     }
+
     
 
   return (
     <nav className='bg-stone-400 p-4 bg-cover flex-wrap: wrap;'>
         <div className="flex items-center justify-between">
-            <div className='text-white hover:bg-violet-200 text-2xl font-bold ml-5 cursor-pointer'>cein</div>
+            <div className='text-white hover:bg-violet-200 text-2xl font-bold ml-5 cursor-pointer'>
+                cein</div>
 
             {/* Toggle Menu Button */}
             <div className="md:hidden">
@@ -25,24 +28,22 @@ function NavBar() {
                 </button>
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
-            <ul className='flex flex-row  md:flex space-x-5'>
+            <ul className='flex flex-row  md:flex space-x-10'>
                 <li><a href="#" className='text-white  hover:bg-violet-200 '>Home</a></li>
                 <li><a href="#" className='text-white  hover:bg-violet-200'>About</a></li>
-                <li><a href="#" className='text-white  hover:bg-violet-200'>Services</a></li>
-                <li><a href="#" className='text-white  hover:bg-violet-200'>Contact</a></li>
+                <li><a href="#" className='text-white  hover:bg-violet-200'>Productlist</a></li>
+                <li><a href="#" className='text-white  hover:bg-violet-200 mr-3'>Contact</a></li> 
             </ul>
-            </div>
+            <form className="form-inline my-2 my-lg-0">
+      <input className="form-control mr-sm-2"  type="search" placeholder="" aria-label="Search" />
+      <button className="bg-green-300 btn btn-outline-success my-2 my-sm-0" type="submit ">Search</button>
+      </form>
+           
+        </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen ? (
-            <ul className='flex-col md:hidden'>
-                <li className='py-2'><a href="#" className='text-white'>Home</a></li>
-                <li className='py-2'><a href="#" className='text-white'>About</a></li>
-                <li className='py-2'><a href="#" className='text-white'>Services</a></li>
-                <li className='py-2'><a href="#" className='text-white'>Contact</a></li>
-            </ul>
-        ) : null}
+        
+       
         
     </nav>
   )
