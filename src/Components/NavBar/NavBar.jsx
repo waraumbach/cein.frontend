@@ -19,7 +19,7 @@ function NavBar() {
   return (
     <nav className='bg-stone-400 p-4 bg-cover flex-wrap: wrap;'>
         <div className="flex items-center justify-between">
-            <div className='text-white hover:bg-violet-200 text-2xl font-bold ml-5 cursor-pointer'>
+            <div className='text-white hover:bg-green-300 text-2xl font-bold ml-5 cursor-pointer'>
                 cein</div>
 
             {/* Toggle Menu Button */}
@@ -29,10 +29,10 @@ function NavBar() {
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
             <ul className='flex flex-row  md:flex space-x-10'>
-                <li><a href="#" className='text-white  hover:bg-violet-200 '>Home</a></li>
-                <li><a href="#" className='text-white  hover:bg-violet-200'>About</a></li>
-                <li><a href="#" className='text-white  hover:bg-violet-200'>Productlist</a></li>
-                <li><a href="#" className='text-white  hover:bg-violet-200 mr-3'>Contact</a></li> 
+                <li><a href="#" className='text-white  hover:bg-green-300 '>Home</a></li>
+                <li><a href="#" className='text-white  hover:bg-green-300'>About</a></li>
+                <li><a href="#" className='text-white  hover:bg-green-300'>Productlist</a></li>
+                <li><a href="#" className='text-white  hover:bg-green-300 mr-3'>Contact</a></li> 
             </ul>
             <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2"  type="search" placeholder="" aria-label="Search" />
