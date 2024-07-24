@@ -1,13 +1,9 @@
 import { useState } from 'react'
-
-
-
+import { Link } from 'react-router-dom';
 
 function NavBar() {
-
-   
     const [isOpen, setIsOpen] = useState(false);
-    
+
     
     const toggleMenu = () => {
        
@@ -34,17 +30,19 @@ function NavBar() {
                 <li><a href="#" className='text-white  hover:bg-green-300'>Productlist</a></li>
                 <li><a href="#" className='text-white  hover:bg-green-300 mr-3'>Contact</a></li> 
             </ul>
+            <div>
+          <Link to="/login" className="text-white px-4 py-2 border border-transparent rounded-md hover:bg-gray-700">
+            Login
+          </Link>
+        </div>
             <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2"  type="search" placeholder="" aria-label="Search" />
       <button className="bg-green-300 btn btn-outline-success my-2 my-sm-0" type="submit ">Search</button>
       </form>
-           
-        </div>
-        </div>
+       </div>
+       </div>
 
-        
        
-        
     </nav>
   )
 }
