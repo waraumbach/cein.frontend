@@ -9,6 +9,7 @@ import ProductList from './Components/ProductList/ProductList'
 import Footer from './Components/Footer/Footer'
 import Login from './pages/Login'
 import Register from './pages/Register';
+import Contact from './pages/Contact';
 
 
 
@@ -21,6 +22,7 @@ function App () {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/contact" element={<Contact />} />
 
     </Routes>
     </div>
