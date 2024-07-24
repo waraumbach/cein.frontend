@@ -8,6 +8,7 @@ import NavBar from './Components/NavBar/NavBar'
 import ProductList from './Components/ProductList/ProductList'
 import Footer from './Components/Footer/Footer'
 import Login from './pages/Login'
+import Register from './pages/Register';
 
 
 
@@ -19,7 +20,9 @@ function App () {
     <NavBar />
     <Routes>
       <Route path="/login" element={<Login />} />
-         </Routes>
+      <Route path="/register" element={<Register />} />
+
+    </Routes>
     </div>
     </Router>
 
