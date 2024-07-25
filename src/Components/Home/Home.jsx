@@ -1,7 +1,17 @@
+import HeroSection from '../Hero/HeroSection'
+import ProductList from '../ProductList/Products'
 
 const Home =() =>{
 
-    return (<><h1></h1></>)
+    return (
+        <>
+            <HeroSection />
+            <ProductList />
+
+
+        </>
+
+    )
 }
 
 export default Home

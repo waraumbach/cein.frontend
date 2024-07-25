@@ -8,7 +8,7 @@ const products = [
   // Add more products as needed
 ];
 
-const ProductList = () => {
+const Products = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-6">Product List</h2>
@@ -27,4 +27,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default Products;

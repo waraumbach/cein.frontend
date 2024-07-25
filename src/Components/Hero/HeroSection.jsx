@@ -8,7 +8,7 @@ const HeroSection = () => {
         <div className="ml-2  ">
           <h1 className="text-xl md:text-xl text-gray font-bold mb-4">Treat Your Body like Your Face</h1>
           <p className="text-xl md:text-l text-gray">Creating the hightly Effective Body Care</p><br />
-          <a href="#" className="bg-green-300 hover:bg-violet-300 text-gray py-2 px-4 rounded-10px text-lg">get infos</a>
+          <a href="/detailsProduct" className="bg-green-300 hover:bg-violet-300 text-gray py-2 px-4 rounded-10px text-lg">get infos</a>
           </div>
         </div>
       </div>

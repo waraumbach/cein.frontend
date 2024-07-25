@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function NavBar() {
        
         setIsOpen(!isOpen)
     }
-
+  
     
 
   return (
@@ -25,9 +25,9 @@ function NavBar() {
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
             <ul className='flex flex-row  md:flex space-x-5'>
-                <li><a href="#" className='text-white  hover:bg-green-300 '>Home</a></li>
+                <li><a href="/" className='text-white  hover:bg-green-300 '>Home</a></li>
                 <li><a href="#" className='text-white  hover:bg-green-300'>About</a></li>
-                <li><a href="#" className='text-white  hover:bg-green-300'>Productlist</a></li>
+                <li><a href="/products" className='text-white  hover:bg-green-300'>Productlist</a></li>
                
             </ul>
             <div>
@@ -40,6 +40,8 @@ function NavBar() {
           <Link to="/contact" className="ml-4 text-white px-4 py-2 border border-transparent rounded-md hover:bg-gray-700">
             Contact
           </Link>
+          
+
         </div>
             <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2"  type="search" placeholder="" aria-label="Search" />
