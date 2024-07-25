@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <nav className='bg-stone-400 p-4 bg-cover flex-wrap: wrap;'>
         <div className="flex items-center justify-between">
-            <div className='text-white hover:bg-green-300 text-2xl font-bold ml-5 cursor-pointer'>
+            <div className='text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300 text-2xl font-bold ml-5 cursor-pointer'>
                 cein</div>
 
             {/* Toggle Menu Button */}
@@ -25,9 +25,9 @@ function NavBar() {
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
             <ul className='flex flex-row  md:flex space-x-6'>
-                <li><a href="/" className='text-white  hover:bg-green-300 '>Home</a></li>
-                <li><a href="#" className='text-white  hover:bg-green-300'>About</a></li>
-                <li><a href="/products" className='text-white  hover:bg-green-300 ml-2'>Productlist</a></li><br />
+                <li><a href="/" className='text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300'>Home</a></li>
+                <li><a href="/about" className='text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300'>About</a></li>
+                <li><a href="/products" className='text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300'>Productlist</a></li><br />
                
             </ul>
             <div>
