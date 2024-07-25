@@ -24,20 +24,20 @@ function NavBar() {
                 </button>
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
-            <ul className='flex flex-row  md:flex space-x-5'>
+            <ul className='flex flex-row  md:flex space-x-6'>
                 <li><a href="/" className='text-white  hover:bg-green-300 '>Home</a></li>
                 <li><a href="#" className='text-white  hover:bg-green-300'>About</a></li>
-                <li><a href="/products" className='text-white  hover:bg-green-300'>Productlist</a></li>
+                <li><a href="/products" className='text-white  hover:bg-green-300 ml-2'>Productlist</a></li><br />
                
             </ul>
             <div>
-          <Link to="/login" className="text-white px-4 py-2 border border-transparent rounded-md hover:bg-gray-700">
+          <Link to="/login" className="text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300">
             Login
           </Link>
-          <Link to="/register" className="ml-4 text-white px-4 py-2 border border-transparent rounded-md hover:bg-gray-700">
+          <Link to="/register" className="ml-4 text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300">
             Register
           </Link>
-          <Link to="/contact" className="ml-4 text-white px-4 py-2 border border-transparent rounded-md hover:bg-gray-700">
+          <Link to="/contact" className="ml-4 text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300">
             Contact
           </Link>
           
