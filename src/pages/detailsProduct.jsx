@@ -6,3 +6,6 @@ const DetailsProduct =()=>{
     </>)
 }
 export default DetailsProduct
+
+
+
