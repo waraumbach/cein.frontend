@@ -31,6 +31,9 @@ function NavBar() {
                
             </ul>
             <div>
+            <Link to="/ourstory" className="text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300">
+            Our Story
+          </Link>
           <Link to="/login" className="text-white px-4 py-2 border border-transparent rounded-md hover:bg-green-300">
             Login
           </Link>
