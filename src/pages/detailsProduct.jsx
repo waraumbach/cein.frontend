@@ -27,6 +27,26 @@ const DetailsProduct =()=>{
         </div>
       </div>
     </div>
+    <div className="p-6 max-w-4xl mx-auto bg-white rounded-xl shadow-md space-y-4">
+      <div className="flex items-center space-x-4">
+        <img className="h-48 w-48 object-cover" src={product.image} alt={product.name} />
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900">{product.name}</h2>
+          <p className="text-xl text-gray-700">{product.price}</p>
+          <p className="text-gray-600 mt-4">{product.description}</p>
+        </div>
+      </div>
+    </div>
+    <div className="p-6 max-w-4xl mx-auto bg-white rounded-xl shadow-md space-y-4">
+      <div className="flex items-center space-x-4">
+        <img className="h-48 w-48 object-cover" src={product.image} alt={product.name} />
+        <div>
+          <h2 className="text-3xl font-bold text-gray-900">{product.name}</h2>
+          <p className="text-xl text-gray-700">{product.price}</p>
+          <p className="text-gray-600 mt-4">{product.description}</p>
+        </div>
+      </div>
+    </div>
     </>)
 }
 export default DetailsProduct

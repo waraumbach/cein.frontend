@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Products from './Components/ProductList/Products.jsx';
 import About from './pages/about';
 import DetailsProduct from './pages/detailsProduct.jsx';
+import Search from './pages/search.jsx';
 
 
 
@@ -29,6 +30,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/detailsProduct" element={<DetailsProduct />} />
+            <Route path="/search" element={<Search />} />
+
+
           </Routes>
           <Footer />
         </div>
