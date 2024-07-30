@@ -15,8 +15,10 @@ function NavBar() {
   return (
     <nav className='bg-stone-400 p-4 bg-cover flex-wrap: wrap;'>
         <div className="flex items-center justify-between">
-            <div className='text-lg  ml-5 cursor-pointer py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0'>
-                cein</div>
+      <p className="text-2xl m-6 group relative w-max">
+      <span className="px-1 relative z-10 group-hover:text-white">cein</span>
+      <span className="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-stone-600 rounded-md z-0 group-hover:h-full "></span>
+      </p>
 
             {/* Toggle Menu Button */}
             <div className="md:hidden">
@@ -47,7 +49,7 @@ function NavBar() {
         <div className="pt-2 relative mx-auto text-gray-600">
         <input className="ml-3 border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-sm text-sm focus:outline-none"
           type="search" name="search" placeholder="type here"/>
-        <button type="submit" className="ml-2 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">search</button>
+        <button type="submit" className="ml-2 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-stone-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">search</button>
       </div>
        </div>
        </div>
