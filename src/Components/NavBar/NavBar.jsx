@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link  } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -47,9 +48,7 @@ function NavBar() {
 
         </div>
         <div className="pt-2 relative mx-auto text-gray-600">
-        <input className="ml-3 border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-sm text-sm focus:outline-none"
-          type="search" name="search" placeholder="type here"/>
-        <button type="submit" className="ml-2 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-stone-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">search</button>
+        <SearchBar />
       </div>
        </div>
        </div>
