@@ -8,10 +8,10 @@ import Footer from './Components/Footer/Footer'
 import Login from './pages/Login'
 import Register from './pages/Register';
 import Contact from './pages/Contact';
-import Products from './Components/ProductList/Products.jsx';
 import About from './pages/about';
 import DetailsProduct from './pages/detailsProduct.jsx';
 import Search from './pages/Search.jsx';
+import Products from './pages/Products.jsx';
 
 
 
