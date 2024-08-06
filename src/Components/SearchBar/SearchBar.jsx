@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState("")
     const [suggestions, setSuggestions] = useState(["Skin Care", "Body Care"])
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (searchTerm === "") {
@@ -32,7 +34,7 @@ const SearchBar = () => {
             <input type='text' placeholder='Find your product' className='input border-none rounded-none' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
             <ul tabIndex={0} className="dropdown-content menu bg-base-100 z-[1] w-52 p-2 shadow">
                 {suggestions.map((suggestion, index) => (
-                    <li key={index}><a>{suggestion}</a></li>
+                    <li key={index} onClick={() => {navigate(`/search?term=${suggestion}`) }}><a>{suggestion}</a></li>
                 ))}
             </ul>
         </div>

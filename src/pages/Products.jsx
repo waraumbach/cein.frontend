@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import ProductList from '../Components/ProductList/Products'
 
 
-const Products = ()=> {
+
+const Products = () => {
     const [products, setProducts] = useState(null)
 
     useEffect(() => {
