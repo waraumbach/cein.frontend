@@ -30,8 +30,8 @@ const SearchBar = () => {
     }, [searchTerm])
 
     return (
-        <div className='dropdown'>
-            <input type='text' placeholder='Find your product' className='input border-none rounded-none' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+        <div className='dropdown border'>
+            <input type='text' placeholder='Find your product' className='input border-none rounded-none py-2 px-4' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
             <ul tabIndex={0} className="dropdown-content menu bg-base-100 z-[1] w-52 p-2 shadow">
                 {suggestions.map((suggestion, index) => (
                     <li key={index} onClick={() => {navigate(`/search?term=${suggestion}`) }}><a>{suggestion}</a></li>
