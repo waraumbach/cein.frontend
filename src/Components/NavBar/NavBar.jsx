@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import { GoSearch } from "react-icons/go";
+import { CiShoppingCart } from "react-icons/ci";
+import { useOrder } from '../../context/orderContext';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isShowSearchbar, setShowSearchbar] = useState(false);
+  const { orderItems } = useOrder();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -16,7 +19,7 @@ function NavBar() {
   }
 
   return (
-    <nav className='p-4 bg-cover flex-wrap: wrap;'>
+    <nav className='p-4 bg-cover flex-wrap border-b'>
       <div className="flex items-center justify-between">
         <a href="/about" className='group py-2 px-4 bg-transparent text-white-600 font-semibold rounded transition ease-in duration-200 transform'>
           About Us
@@ -35,10 +38,14 @@ function NavBar() {
           </button>
         </div>
         <div className={`w-full lg:flex lg:items-center lg:w-auto lg:justify-center ${isOpen ? 'block' : 'hidden'}`}>
-          <div className="pt-2 text-gray-600">
-            {!isShowSearchbar ? <GoSearch onClick={toggleSearchBar} /> :
-              <SearchBar />}
-          </div>
+          {!isShowSearchbar ? <GoSearch onClick={toggleSearchBar} /> :
+            <SearchBar />}
+          <Link to="/cart">
+            <div className='flex justify-center items-center gap-2 mx-2 bg-neutral text-neutral-50 p-4'>
+              <CiShoppingCart />
+              {orderItems.length}
+            </div>
+          </Link>
           <Link to="/login" className="ml-3 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
             Login
           </Link>
