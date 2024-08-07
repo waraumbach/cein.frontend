@@ -1,5 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  daisyui: {
+    themes: [
+      {
+        cein: {
+          "primary": "#52b69a",
+          "primary-2": "#76c893",
+          "secondary": "#ffa92c",
+          "secondary-2": "#ffc570",
+          "neutral": "#0c0c20",
+          "neutral-white": "#f6faf9"
+        },
+      }
+    ]
+  },
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
