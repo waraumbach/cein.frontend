@@ -7,12 +7,12 @@ const Products = ({ products }) => {
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
           <Link to={'/products/' + product._id}>
-            <div key={product._id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={product.images[0]} alt={product.name} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{product.name}</h3>
-                <p className="text-gray-700">{product.price}</p>
-              </div>
+            <div key={product._id} className="flex flex-col items-center bg-white rounded-lg overflow-hidden">
+              <img src={product.images[0]} alt={product.name} className="w-full h-48 mb-4 object-contain" />
+              <h3 className="font-semibold">{product.name}</h3>
+              <p className="font-thin text-sm mb-4">{product.description}</p>
+              <p className="font-thin text-sm">{product.quantity} ml</p>
+              <p className="font-thin text-sm text-neutral">{product.price} $</p>
             </div>
           </Link>
         ))}
