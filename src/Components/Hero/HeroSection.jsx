@@ -3,7 +3,7 @@
 
 const HeroSection = () => {
   return (
-    <div className="mt-3 bg-cover bg-center bg-no-repeat h-96 w-full" style={{ backgroundImage: 'url(./src/assets/photos/heroSection.jpg)', backgroundSize :"100%" }}>
+    <div className="mt-3 bg-cover bg-center bg-no-repeat h-96 w-full" style={{ backgroundImage: 'url(/heroSection.jpg)', backgroundSize :"100%" }}>
       <div className="flex items-center  h-full bg-opacity-50">
         <div className="ml-2  ">
           <h1 className="text-xl md:text-xl text-gray font-bold mb-4">Treat Your Body like Your Face</h1>
