@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { fetchSuggestions } from '../../service/product'
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState("")
@@ -11,7 +12,7 @@ const SearchBar = () => {
             return;
         }
 
-        const fetchSuggestions = async () => {
+        const getSuggestions = async () => {
             try {
                 const data = await fetchSuggestions(searchTerm);
                 const mappedName = data.map(d => d.name)
@@ -22,7 +23,7 @@ const SearchBar = () => {
         };
 
         const delayDebounceFn = setTimeout(() => {
-            fetchSuggestions();
+            getSuggestions();
         }, 300);
 
         return () => clearTimeout(delayDebounceFn);
