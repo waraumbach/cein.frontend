@@ -1,11 +1,13 @@
 
 import { useState } from 'react';
+import { useAuth } from '../context/authContext';
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,13 +15,7 @@ const Login = () => {
       setError('Email and password are required.');
       return;
     }
-
-    if (email === 'user@example.com' && password === 'password') {
-      setError('');
-      alert('Login successful!');
-    } else {
-      setError('Invalid email or password.');
-    }
+    login(email, password)
   };
 
   return (

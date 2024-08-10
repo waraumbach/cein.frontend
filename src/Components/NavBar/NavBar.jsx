@@ -4,11 +4,15 @@ import SearchBar from '../SearchBar/SearchBar';
 import { GoSearch } from "react-icons/go";
 import { CiShoppingCart } from "react-icons/ci";
 import { useOrder } from '../../context/orderContext';
+import { useAuth } from '../../context/authContext';
+import { IoMdPerson } from "react-icons/io";
+
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isShowSearchbar, setShowSearchbar] = useState(false);
   const { orderItems } = useOrder();
+  const { user, logout } = useAuth();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -23,7 +27,7 @@ function NavBar() {
       <div className="flex items-center justify-between">
         <a href="/about" className='group py-2 px-4 bg-transparent text-white-600 font-semibold rounded transition ease-in duration-200 transform'>
           About Us
-          <span class="ease absolute bottom-0 left-0 h-0 w-0 border-b-2 border-neutral transition-all duration-200 group-hover:w-full"></span>
+          <span className="ease absolute bottom-0 left-0 h-0 w-0 border-b-2 border-neutral transition-all duration-200 group-hover:w-full"></span>
         </a>
         <Link to="/">
           <p className="text-2xl m-6 group relative w-max">
@@ -46,12 +50,22 @@ function NavBar() {
               {orderItems.length}
             </div>
           </Link>
-          <Link to="/login" className="ml-3 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
-            Login
-          </Link>
-          <Link to="/register" className="ml-4 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
-            Register
-          </Link>
+          {user === null ? <>
+            <Link to="/login" className="ml-3 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
+              Login
+            </Link>
+            <Link to="/register" className="ml-4 py-2 px-4 bg-transparent text-white-600 font-semibold border border-stone-600 rounded hover:bg-gray-300 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
+              Register
+            </Link>
+          </> :
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn border-none m-1"><IoMdPerson /></div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 z-[1] w-52 p-2 shadow">
+                <li className='mt-2 font-thin'>User: {user.email.split("@")[0]}</li>
+                <li className='mt-2 font-thin hover:bg-gray-200 cursor-pointer' onClick={logout}>Logout</li>
+              </ul>
+            </div>}
+
 
         </div>
       </div>

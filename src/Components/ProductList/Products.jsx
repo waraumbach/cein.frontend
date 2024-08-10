@@ -5,8 +5,8 @@ const Products = ({ products }) => {
   const { addToOrder } = useOrder();
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6">Product List</h2>
+    <div className="container mx-auto p-4">
+      <h2 className="text-2xl font-bold mb-6">Products</h2>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
           <div key={product._id} className="group bg-white overflow-hidden hover:bg-secondary hover:bg-opacity-5">

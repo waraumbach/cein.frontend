@@ -1,9 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { loginServer } from '../service/auth';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -12,14 +15,25 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const login = (userData) => {
-        setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
+    const login = async (email, password) => {
+        try {
+            const data = await loginServer(email, password);
+            const userData = { email, token: data.token };
+
+            setUser(userData);
+            localStorage.setItem('user', JSON.stringify(userData));
+
+            navigate("/"); 
+        } catch (error) {
+            console.log(error)
+            alert("Invalid username or password");
+        }
     };
 
     const logout = () => {
         setUser(null);
         localStorage.removeItem('user');
+        navigate("/")
     };
 
     return (
