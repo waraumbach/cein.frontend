@@ -13,8 +13,7 @@ const SearchBar = () => {
 
         const fetchSuggestions = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/products/suggestions?productName=${searchTerm}`);
-                const data = await response.json();
+                const data = await fetchSuggestions(searchTerm);
                 const mappedName = data.map(d => d.name)
                 setSuggestions(mappedName);
             } catch (error) {
