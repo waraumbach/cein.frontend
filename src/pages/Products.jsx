@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductList from '../Components/ProductList/Products'
+import { fetchProducts } from "../service/product";
 
 
 
@@ -7,17 +8,16 @@ const Products = () => {
     const [products, setProducts] = useState(null)
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const getProducts = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/products`);
-                const data = await response.json();
+                const data = await fetchProducts();
                 setProducts(data);
             } catch (error) {
-                console.error('Error fetching suggestions:', error);
+                console.error('Error fetching products:', error);
             }
         };
 
-        fetchProducts()
+        getProducts()
         return () => {
         }
     }, [])

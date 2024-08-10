@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
 import HeroSection from '../Hero/HeroSection'
 import ProductList from '../ProductList/Products'
+import { fetchProducts } from '../../service/product'
 
 const Home = () => {
     const [products, setProducts] = useState(null)
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const getProducts = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/products`);
-                const data = await response.json();
+                const data = await fetchProducts();
                 setProducts(data);
             } catch (error) {
-                console.error('Error fetching suggestions:', error);
+                console.error('Error fetching products:', error);
             }
         };
 
-        fetchProducts()
+        getProducts()
         return () => {
         }
     }, [])

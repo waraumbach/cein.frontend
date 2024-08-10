@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useOrder } from '../context/orderContext';
+import { fetchProduct } from '../service/product';
 
 
 
@@ -11,17 +12,16 @@ const DetailsProduct = () => {
   const { addToOrder } = useOrder();
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    const getProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/products/${id}`);
-        const data = await response.json();
+        const data = await fetchProduct(id);
         setProduct(data);
       } catch (error) {
         console.error('Error fetching suggestions:', error);
       }
     };
 
-    fetchProduct()
+    getProduct()
 
     return () => { }
   }, [])
