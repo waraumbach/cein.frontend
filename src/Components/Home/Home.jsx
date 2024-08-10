@@ -3,6 +3,7 @@ import HeroSection from '../Hero/HeroSection'
 import ProductList from '../ProductList/Products'
 import { fetchProducts } from '../../service/product'
 import { Link } from 'react-router-dom'
+import { MdArrowRightAlt } from "react-icons/md";
 
 const Home = () => {
     const [products, setProducts] = useState(null)
@@ -26,11 +27,11 @@ const Home = () => {
     return (
         <>
             <HeroSection />
-            <div className='flex mx-20 my-4'>
-                <div className='flex-1'>
+            <div className='flex flex-col mx-20 gap-4'>
+                <div className='flex-1 border-b'>
                     {products !== null ? <ProductList products={products} /> : <></>}
                 </div>
-                <Link to="/products" className='p-4 bg-neutral text-white mx-10 self-end hover:bg-neutral-content'>View all products</Link>
+                <Link to="/products" className='text-neutral font-thin m-4 underline'><span>All Products &#8594;</span></Link>
             </div>
         </>
 
