@@ -3,18 +3,28 @@ import React, { createContext, useState, useContext } from 'react';
 const OrderContext = createContext();
 
 export const OrderProvider = ({ children }) => {
-  const [orderItems, setOrderItems] = useState([]);
+  const [orderItems, setOrderItems] = useState({});
 
   const addToOrder = (product, quantity) => {
-    setOrderItems([...orderItems, { product, quantity }]);
+    setOrderItems(prevItems => ({
+      ...prevItems,
+      [product._id]: {
+        ...product,
+        quantity: (prevItems[product._id]?.quantity || 0) + quantity
+      }
+    }));
   };
 
   const removeFromOrder = (productId) => {
-    setOrderItems(orderItems.filter(item => item.product.id !== productId));
+    setOrderItems(prevItems => {
+      const updatedItems = { ...prevItems };
+      delete updatedItems[productId];
+      return updatedItems;
+    });
   };
 
   const totalPrice = () => {
-    return orderItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+    return Object.values(orderItems).reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
   return (

@@ -29,7 +29,7 @@ function NavBar() {
           About Us
           <span className="ease absolute bottom-0 left-0 h-0 w-0 border-b-2 border-neutral transition-all duration-200 group-hover:w-full"></span>
         </a>
-        <Link to="/">
+        <Link className='flex-1 flex justify-center' to="/">
           <p className="text-2xl m-6 group relative w-max">
             <span className="px-1 relative z-10">CEIN.</span>
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-neutral rounded-md z-0 "></span>
@@ -41,13 +41,13 @@ function NavBar() {
           <button id='menu-toggle' className='text-white' onClick={toggleMenu}>
           </button>
         </div>
-        <div className={`w-full lg:flex lg:items-center lg:w-auto lg:justify-center ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`flex items-center w-autojustify-center`}>
           {!isShowSearchbar ? <GoSearch onClick={toggleSearchBar} /> :
             <SearchBar />}
           <Link to="/cart">
             <div className='flex justify-center items-center gap-2 mx-2 bg-neutral text-neutral-50 p-4'>
               <CiShoppingCart />
-              {orderItems.length}
+              {Object.keys(orderItems).length}
             </div>
           </Link>
           {user === null ? <>
