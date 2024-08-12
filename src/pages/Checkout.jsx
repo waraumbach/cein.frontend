@@ -18,7 +18,7 @@ const CheckoutContainer = () => {
     useEffect(() => {
         const getPayment = async () => {
             try {
-                const data = await getPaymentIntent(totalPrice());
+                const data = await getPaymentIntent(totalPrice() * 100);
                 setClientSecret(data.clientSecret);
             } catch (error) {
                 console.error('Error fetching products:', error);
