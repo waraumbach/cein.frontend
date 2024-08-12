@@ -25,10 +25,10 @@ function NavBar() {
   return (
     <nav className='p-4 bg-cover flex-wrap border-b'>
       <div className="flex items-center justify-between">
-        <a href="/about" className='group py-2 px-4 bg-transparent text-white-600 font-semibold rounded transition ease-in duration-200 transform'>
+        <Link to="/about" className='group py-2 px-4 bg-transparent text-white-600 font-semibold rounded transition ease-in duration-200 transform'>
           About Us
           <span className="ease absolute bottom-0 left-0 h-0 w-0 border-b-2 border-neutral transition-all duration-200 group-hover:w-full"></span>
-        </a>
+        </Link>
         <Link className='flex-1 flex justify-center' to="/">
           <p className="text-2xl m-6 group relative w-max">
             <span className="px-1 relative z-10">CEIN.</span>
