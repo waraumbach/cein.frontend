@@ -1,5 +1,8 @@
 
 import  { useState } from 'react';
+import { register } from '../service/auth';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authContext';
 
 
 const Register = () => {
@@ -7,6 +10,8 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,8 +23,7 @@ const Register = () => {
 
     if (email && password) {
       setError('');
-      alert('Registration successful!');
-      // Add your registration logic here
+      register(email, password).then(_ => { login(email, password); navigate('/')})
     } else {
       setError('All fields are required.');
     }
@@ -29,7 +33,7 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-md rounded-lg flex overflow-hidden w-full max-w-4xl">
         <div className="w-1/2 hidden md:block">
-          <img src="./src/assets/photos/products/image1.jpg"  alt="Register" className="w-full h-full object-cover" />
+          <img src="/image1.jpg"  alt="Register" className="w-full h-full object-cover" />
         </div>
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
