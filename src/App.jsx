@@ -12,7 +12,7 @@ import About from './pages/about';
 import DetailsProduct from './pages/detailsProduct.jsx';
 import Search from './pages/Search.jsx';
 import Products from './pages/Products.jsx';
-import Admin from './pages/Admin.jsx';
+import Admin from './pages/Admin/Admin.jsx';
 import { OrderProvider } from './context/orderContext.jsx';
 import { AuthProvider } from './context/authContext.jsx';
 import CheckoutContainer from './pages/Checkout.jsx';

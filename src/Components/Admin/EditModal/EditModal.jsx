@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaPen } from "react-icons/fa";
-import { editProduct } from '../../service/product';
+import { editProduct } from '../../../service/product';
 import { useNavigate } from 'react-router-dom';
 
 const EditModal = ({ id, name, description, price, quantity }) => {

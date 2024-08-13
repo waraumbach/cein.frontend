@@ -1,6 +1,6 @@
 import React from 'react'
 import { HiOutlineXMark } from "react-icons/hi2";
-import { deleteProduct } from '../../service/product';
+import { deleteProduct } from '../../../service/product';
 import { useNavigate } from 'react-router-dom';
 
 const DeleteModal = ({ id, name }) => {

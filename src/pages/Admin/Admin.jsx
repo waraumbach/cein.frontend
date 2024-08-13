@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { fetchProducts } from '../service/product';
-import DeleteModal from '../Components/DeleteModal/DeleteModal';
-import EditModal from '../Components/EditModal/EditModal';
-import CreateModal from '../Components/CreateModal/CreateModal';
+import { fetchProducts } from '../../service/product';
+import DeleteModal from '../../Components/Admin/DeleteModal/DeleteModal';
+import EditModal from '../../Components/Admin/EditModal/EditModal';
+import CreateModal from '../../Components/Admin/CreateModal/CreateModal';
 
 const Admin = () => {
     const [products, setProducts] = useState([])
