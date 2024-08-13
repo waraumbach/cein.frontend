@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         try {
             const data = await loginServer(email, password);
-            const userData = { email, token: data.token };
+            const userData = { email, token: data.token, isAdmin: data.isAdmin };
 
             setUser(userData);
             localStorage.setItem('user', JSON.stringify(userData));

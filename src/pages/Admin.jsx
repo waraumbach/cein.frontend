@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { fetchProducts } from '../service/product';
+import DeleteModal from '../Components/DeleteModal/DeleteModal';
+import EditModal from '../Components/EditModal/EditModal';
 
 const Admin = () => {
     const [products, setProducts] = useState([])
@@ -26,6 +28,9 @@ const Admin = () => {
 
     return (
         <div className='h-full flex flex-col gap-4 p-4'>
+            <h1 className='text-2xl'>Admin Panel</h1>
+            <h2 className='font-thin'>Create, Edit, Delete your products here.</h2>
+            <div className='border-b'></div>
             <button className='self-end w-fit p-4 border border-neutral-content'>Add new product</button>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -40,11 +45,16 @@ const Admin = () => {
                     </thead>
                     <tbody>
                         {products.map(product => (
-                            <tr onClick={() => handleRowClick(product._id)} className="hover cursor-pointer hover:bg-neutral-content">
-                                <th>{product.name}</th>
-                                <td>{product.description}</td>
-                                <td>{product.price}</td>
-                                <td>{product.quantity}</td>
+                            <tr key={product._id} className="hover cursor-pointer hover:bg-neutral-content">
+                                <th onClick={() => handleRowClick(product._id)}>{product.name}</th>
+                                <td onClick={() => handleRowClick(product._id)}>{product.description}</td>
+                                <td onClick={() => handleRowClick(product._id)}>{product.price}</td>
+                                <td onClick={() => handleRowClick(product._id)}>{product.quantity}</td>
+                                <div>
+                                <td><DeleteModal id={product._id} name={product.name} /></td>
+                                <td><EditModal id={product._id} name={product.name} description={product.description} price={product.price} quantity={product.quantity} /></td>
+
+                                </div>
                             </tr>
                         ))}
                     </tbody>

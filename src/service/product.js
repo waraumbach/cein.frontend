@@ -55,3 +55,19 @@ export const searchProducts = async (term) => {
         throw error;
     }
 }
+
+export const deleteProduct = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/products/${id}`, {
+            method: "DELETE"
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error;
+    }
+}
