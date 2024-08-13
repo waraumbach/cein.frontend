@@ -44,7 +44,10 @@ const CreateModal = () => {
                         <label>Price:</label>
                         <input value={price} onChange={e => setPrice(e.target.value)} type="number" placeholder="Price" className="input input-bordered w-full max-w-xs" />
                         <label>Image URL:</label>
-                        <input value={imageUrl} onChange={e => setImageUrl(e.target.value)} type="text" placeholder="Image URL" className="input input-bordered w-full max-w-xs" />
+                        <select onChange={e => setImageUrl(e.target.value)} className="select w-full max-w-xs" />
+                            <option value="/product.jpg">product.jpg</option>
+                            <option value="/product2.jpg">product2.jpg</option>
+                            <option></option>
                         <label>Category:</label>
                         <select onChange={e => setCategoryId(e.target.value)} className="select w-full max-w-xs">
                             {categories.map((c, i) => <option value={categories[i]._id}>{categories[i].name}</option>)}
