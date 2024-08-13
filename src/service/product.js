@@ -71,3 +71,28 @@ export const deleteProduct = async (id) => {
         throw error;
     }
 }
+
+export const editProduct = async (id, name, quantity, description, price) => {
+    try {
+        const response = await fetch(`${BASE_URL}/products/${id}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                name: name,
+                quantity: quantity,
+                description: description,
+                price: price
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error;
+    }
+}
