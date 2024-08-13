@@ -21,9 +21,8 @@ const CreateModal = () => {
 
     useEffect(() => {
         fetchCategories().then(
-            data => setCategories(data)
+            data => {setCategories(data); setCategoryId(data[0])}
         )
-
         return () => {
 
         }
