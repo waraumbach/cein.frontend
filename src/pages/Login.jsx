@@ -22,7 +22,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-md rounded-lg flex overflow-hidden w-full max-w-4xl">
         <div className="w-1/2 hidden md:block">
-          <img src="./src/assets/photos/products/image1.jpg" alt="Login" className="w-full h-full object-cover" />
+          <img src="/image1.jpg" alt="Login" className="w-full h-full object-cover" />
         </div>
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
