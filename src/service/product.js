@@ -96,3 +96,30 @@ export const editProduct = async (id, name, quantity, description, price) => {
         throw error;
     }
 }
+
+export const createProduct = async (name, quantity, description, price, imageUrl, categoryId) => {
+    try {
+        const response = await fetch(`${BASE_URL}/products`, {
+            method: "POST",
+            body: JSON.stringify({
+                name: name,
+                quantity: quantity,
+                description: description,
+                price: price,
+                images: [imageUrl],
+                categoryId: categoryId
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error;
+    }
+}
