@@ -1,15 +1,16 @@
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useOrder } from '../context/orderContext';
 import { fetchProduct } from '../service/product';
-
+import { CiShoppingCart } from "react-icons/ci";
 
 
 const DetailsProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { addToOrder } = useOrder();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -33,7 +34,10 @@ const DetailsProduct = () => {
         <h2 className="text-3xl font-bold text-gray-900">{product.name}</h2>
         <p className="text-gray-600 mt-4">{product.description}</p>
         <p className="text-xl text-gray-700 mt-4">{product.price} $</p>
-        <button onClick={() => addToOrder(product, 1)} className="z-10 w-full bg-neutral text-neutral-50 font-thin p-4 text-sm mt-4">Add to your cart</button>
+        <div className='flex gap-4'>
+          <button onClick={() => addToOrder(product, 1)} className="z-10 w-full bg-neutral text-neutral-50 font-thin p-4 text-sm mt-4 hover:bg-gray-500">Add to your cart</button>
+          <button onClick={() => navigate('/cart')} className="z-10 w-full bg-neutral text-neutral-50 font-thin p-4 text-sm mt-4 hover:bg-gray-500"><div className='flex justify-center gap-4'><CiShoppingCart />Go to cart</div></button>
+        </div>
       </div>
 
     </div>
