@@ -28,6 +28,7 @@ const Home = () => {
         <>
             <HeroSection />
             <div className='flex flex-col mx-20 gap-4'>
+                <Link to="/products" className='text-neutral font-thin m-4 underline'><span>All Products &#8594;</span></Link>
                 <div className='flex-1 border-b'>
                     {products !== null ? <ProductList products={products} /> : <></>}
                 </div>
