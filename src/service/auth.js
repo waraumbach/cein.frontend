@@ -66,7 +66,7 @@ export const getUserByToken = async (token) => {
 export const updateUserAddress = async (token, address) => {
   try {
     const response = await fetch(`${BASE_URL}/api/address`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
