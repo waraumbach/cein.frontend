@@ -41,3 +41,45 @@ export const register = async (email, password) => {
     console.error;
   }
 };
+
+export const getUserByToken = async (token) => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/user/token`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error;
+  }
+}
+
+export const updateUserAddress = async (token, address) => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/users/address/edit`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token, address}),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error;
+  }
+}

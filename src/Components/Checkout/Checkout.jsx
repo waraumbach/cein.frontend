@@ -1,11 +1,29 @@
 import { AddressElement, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/authContext';
+import { updateUserAddress } from '../../service/auth';
 
 const Checkout = () => {
+    const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
     const [step, setStep] = useState(1);
     const [address, setAddress] = useState(null)
+
+    const handleAddressDone = () => {
+        const newAddress = {
+            name: address.value.name,
+            street: {
+                addressLine1: address.value.address.line1,
+                addressLine2: address.value.address.line2
+            },
+            city: address.value.address.city,
+            postalCode: address.value.address.postal_code
+        }
+        const res = updateUserAddress(user.token, newAddress)
+        setStep(prev => prev + 1)
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -36,7 +54,7 @@ const Checkout = () => {
                 (<div className='flex w-full p-4'>
                     <form className="flex flex-1 flex-col gap-4 p-4 h-full">
                         <AddressElement onChange={e => setAddress(e)} options={{"mode": "shipping"}} />
-                        <button className="p-4 bg-neutral text-white" disabled={!stripe} onClick={() => setStep(prev => prev+1)}>Next</button>
+                        <button className="p-4 bg-neutral text-white" disabled={!stripe} onClick={handleAddressDone}>Next</button>
                     </form>
                 </div>) :
                 (<div className='flex w-full p-4'>
