@@ -34,7 +34,7 @@ const Profile = () => {
         {userData.address?.city !== undefined ? <h1>{userData.address.city}</h1> : <></>}
         {userData.address?.postalCode !== undefined ? <h1>{userData.address.postalCode}</h1> : <></>}
       </div>
-      <div className='p-4'>
+      <div className='p-4 overflow-auto'>
         <p>Orders:</p>
         {
           orders.map(o => (
