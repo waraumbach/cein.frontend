@@ -1,6 +1,8 @@
 
 // src/components/Footer.jsx
 
+import { Link } from "react-router-dom";
+
 
 
 const Footer = () => {
@@ -16,15 +18,15 @@ const Footer = () => {
                     <ul>
                         <li className="mb-2"><a href="#" className="hover:text-white">Home</a></li>
                         <li className="mb-2"><a href="#" className="hover:text-white">Productlist</a></li>
-                        <li className="mb-2"><a href="#" className="hover:text-white">Contact</a></li>
+                        <li className="mb-2"><Link to="/contact" className="hover:text-white">Contact</Link></li>
                     </ul>
                 </div>
                 <div className="w-1/3 md:w-1/4 p-2">
                     <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
                     <ul className="flex space-x-4">
-                        <li><a href="#" className="hover:text-white">Facebook</a></li>
-                        <li><a href="#" className="hover:text-white">Twitter</a></li>
-                        <li><a href="#" className="hover:text-white">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/" className="hover:text-white">Facebook</a></li>
+                        <li><a href="https://x.com/" className="hover:text-white">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/" className="hover:text-white">Instagram</a></li>
                     </ul>
                 </div>
             </div>
