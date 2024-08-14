@@ -29,10 +29,10 @@ const Profile = () => {
         <h1 className='mb-4 border-b'>Email: {user.email}</h1>
         {userData.address?.name !== undefined ? <h1 className='mb-4 border-b'>Name: {userData.address?.name}</h1> : <></>}
         <h1 className='mb-4 border-b'>Address</h1>
-        {userData.address.street.addressLine1 !== undefined ? <h1>{userData.address.street.addressLine1}</h1> : <></>}
-        {userData.address.street.addressLine2 !== undefined ? <h1>{userData.address.street.addressLine2}</h1> : <></>}
-        {userData.address.city !== undefined ? <h1>{userData.address.city}</h1> : <></>}
-        {userData.address.postalCode !== undefined ? <h1>{userData.address.postalCode}</h1> : <></>}
+        {userData.address?.street?.addressLine1 !== undefined ? <h1>{userData.address.street.addressLine1}</h1> : <></>}
+        {userData.address?.street?.addressLine2 !== undefined ? <h1>{userData.address.street.addressLine2}</h1> : <></>}
+        {userData.address?.city !== undefined ? <h1>{userData.address.city}</h1> : <></>}
+        {userData.address?.postalCode !== undefined ? <h1>{userData.address.postalCode}</h1> : <></>}
       </div>
       <div className='p-4'>
         <p>Orders:</p>

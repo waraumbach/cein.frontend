@@ -2,7 +2,7 @@ import { BASE_URL } from "./base";
 
 export const fetchProducts = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/products`);
+        const response = await fetch(`${BASE_URL}/api/products`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -16,7 +16,7 @@ export const fetchProducts = async () => {
 
 export const fetchSuggestions = async (term) => {
     try {
-        const response = await fetch(`${BASE_URL}/products/suggestions?productName=${term}`);
+        const response = await fetch(`${BASE_URL}/api/products/suggestions?productName=${term}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -30,7 +30,7 @@ export const fetchSuggestions = async (term) => {
 
 export const fetchProduct = async (id) => {
     try {
-        const response = await fetch(`${BASE_URL}/products/${id}`);
+        const response = await fetch(`${BASE_URL}/api/products/${id}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -44,7 +44,7 @@ export const fetchProduct = async (id) => {
 
 export const searchProducts = async (term) => {
     try {
-        const response = await fetch(`${BASE_URL}/products/search?productName=${term}`);
+        const response = await fetch(`${BASE_URL}/api/products/search?productName=${term}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -58,7 +58,7 @@ export const searchProducts = async (term) => {
 
 export const deleteProduct = async (id) => {
     try {
-        const response = await fetch(`${BASE_URL}/products/${id}`, {
+        const response = await fetch(`${BASE_URL}/api/products/${id}`, {
             method: "DELETE"
         });
         if (!response.ok) {
@@ -74,7 +74,7 @@ export const deleteProduct = async (id) => {
 
 export const editProduct = async (id, name, quantity, description, price) => {
     try {
-        const response = await fetch(`${BASE_URL}/products/${id}`, {
+        const response = await fetch(`${BASE_URL}/api/products/${id}`, {
             method: "PUT",
             body: JSON.stringify({
                 name: name,
@@ -99,7 +99,7 @@ export const editProduct = async (id, name, quantity, description, price) => {
 
 export const createProduct = async (name, quantity, description, price, imageUrl, categoryId) => {
     try {
-        const response = await fetch(`${BASE_URL}/products`, {
+        const response = await fetch(`${BASE_URL}/api/products`, {
             method: "POST",
             body: JSON.stringify({
                 name: name,
