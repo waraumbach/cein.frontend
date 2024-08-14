@@ -17,6 +17,7 @@ import { OrderProvider } from './context/orderContext.jsx';
 import { AuthProvider } from './context/authContext.jsx';
 import CheckoutContainer from './pages/Checkout.jsx';
 import Cart from './pages/Cart.jsx';
+import Profile from './pages/Profile.jsx';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                   <Route path="/checkout" element={<CheckoutContainer />} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/admin" element={<Admin />} />
+                  <Route path="/profile" element={<Profile />} />
                 </Routes>
                 <Footer />
               </div>

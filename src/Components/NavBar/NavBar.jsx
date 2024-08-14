@@ -63,6 +63,7 @@ function NavBar() {
               <ul tabIndex={0} className="dropdown-content menu bg-base-100 z-[1] w-52 p-2 shadow">
                 <li className='mt-2 font-thin'>User: {user.email.split("@")[0]}</li>
                 {user.isAdmin === true ? <li className='mt-2 font-thin hover:bg-gray-200 cursor-pointer'><Link to="/admin">Admin Panel</Link></li> : <></>}
+                <li className='mt-2 font-thin hover:bg-gray-200 cursor-pointer'><Link to="/profile">Profile</Link></li>
                 <li className='mt-2 font-thin hover:bg-gray-200 cursor-pointer' onClick={logout}>Logout</li>
               </ul>
             </div>}
