@@ -4,6 +4,7 @@ import { fetchProducts } from '../../service/product';
 import DeleteModal from '../../Components/Admin/DeleteModal/DeleteModal';
 import EditModal from '../../Components/Admin/EditModal/EditModal';
 import CreateModal from '../../Components/Admin/CreateModal/CreateModal';
+import CategoryModal from '../../Components/Admin/CreateCategoryModal/CreateCategoryModal';
 
 const Admin = () => {
     const [products, setProducts] = useState([])
@@ -33,6 +34,7 @@ const Admin = () => {
             <h2 className='font-thin'>Create, Edit, Delete your products here.</h2>
             <div className='border-b'></div>
             <CreateModal />
+            <CategoryModal />
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
