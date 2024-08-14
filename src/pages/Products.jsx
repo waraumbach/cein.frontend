@@ -7,7 +7,9 @@ import { fetchCategories } from "../service/category";
 
 const Products = () => {
     const [products, setProducts] = useState(null)
+    const [filteredProducts, setFilteredProducts] = useState([])
     const [categories, setCategories] = useState([])
+    const [currentCategory, setCurrentCategory] = useState('');
 
     useEffect(() => {
         const getProducts = async () => {
@@ -34,17 +36,31 @@ const Products = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if (products) {
+            const filtered = products.filter(p => p.categoryId[0]._id === currentCategory)
+
+            setFilteredProducts(filtered)
+        }
+
+        return () => {
+
+        }
+    }, [currentCategory])
+
+
     return (<div>
         <div className="flex gap-4 p-6 w-full bg-secondary bg-opacity-10">
-            <p className="font-thin underline">Shop All</p>
+            <p onClick={() => setFilteredProducts([])} className="font-thin underline">Shop All</p>
             <p>|</p>
-            {categories.map(c => <span className="font-thin w-fit">{c.name}</span>)}
+            {categories.map(c => <span onClick={() => setCurrentCategory(c._id)} className="font-thin w-fit hover:underline cursor-pointer">{c.name}</span>)}
         </div>
         <div className="container mx-auto">
             <p className="text-sm font-thin">Reversed Formulations</p>
             <p className="text-lg">Essentials For Every Skincare</p>
         </div>
-        {products !== null ? <ProductList products={products} /> : <></>}
+        {products !== null && filteredProducts.length === 0 ? <ProductList products={products} /> : <></>}
+        {filteredProducts.length !== 0 ? <ProductList products={filteredProducts} /> : <></>}
     </div>)
 
 }
