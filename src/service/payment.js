@@ -2,7 +2,7 @@ import { BASE_URL } from "./base";
 
 export const getPaymentIntent = async (amount) => {
   try {
-    const response = await fetch(`${BASE_URL}/payment`, {
+    const response = await fetch(`${BASE_URL}/api/payment`, {
       method: "POST",
       body: JSON.stringify({
         amount: amount

@@ -4,18 +4,22 @@ import React, { useEffect, useState } from 'react'
 import Checkout from '../Components/Checkout/Checkout';
 import { getPaymentIntent } from '../service/payment';
 import { useOrder } from '../context/orderContext';
+import { useNavigate } from 'react-router-dom';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE)
 
 const CheckoutContainer = () => {
     const [clientSecret, setClientSecret] = useState('');
     const { totalPrice } = useOrder();
+    const navigate = useNavigate();
 
     const options = {
         clientSecret: clientSecret,
     };
 
     useEffect(() => {
+        if (totalPrice() === 0) { navigate('/') }
+
         const getPayment = async () => {
             try {
                 const data = await getPaymentIntent(totalPrice() * 100);

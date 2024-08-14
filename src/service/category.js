@@ -2,7 +2,7 @@ import { BASE_URL } from "./base";
 
 export const fetchCategories = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/category`);
+        const response = await fetch(`${BASE_URL}/api/category`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

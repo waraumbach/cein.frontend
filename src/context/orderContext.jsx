@@ -24,7 +24,7 @@ export const OrderProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
-    return Object.values(orderItems).reduce((acc, item) => acc + item.price * item.quantity, 0);
+    return Math.ceil(Object.values(orderItems).reduce((acc, item) => acc + item.price * item.quantity, 0));
   };
 
   return (
