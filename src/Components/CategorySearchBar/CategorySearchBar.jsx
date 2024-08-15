@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchSuggestions } from '../../service/product'
 import { fetchCategorySuggestions, searchCategories } from '../../service/category'
 import { CiSearch } from "react-icons/ci";

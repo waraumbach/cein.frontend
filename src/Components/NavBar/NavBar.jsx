@@ -31,7 +31,7 @@ function NavBar() {
         </Link>
         <Link className='flex-1 flex justify-center' to="/">
           <p className="text-2xl m-6 group relative w-max">
-            <span className="px-1 relative z-10">CEIN.</span>
+            <span className="px-1 relative z-10">CEIN</span>
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-neutral rounded-md z-0 "></span>
           </p>
         </Link>

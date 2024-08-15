@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { fetchProducts } from '../../service/product';
 import DeleteModal from '../../Components/Admin/DeleteModal/DeleteModal';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useOrder } from '../context/orderContext'
 import { RxCross2 } from "react-icons/rx";

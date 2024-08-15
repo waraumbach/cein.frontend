@@ -1,6 +1,6 @@
 import { Elements, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Checkout from '../Components/Checkout/Checkout';
 import { getPaymentIntent } from '../service/payment';
 import { useOrder } from '../context/orderContext';

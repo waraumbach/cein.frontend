@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaPen } from "react-icons/fa";
 import { createProduct, editProduct } from '../../../service/product';
 import { useNavigate } from 'react-router-dom';
