@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { FaPen } from "react-icons/fa";
-import { createProduct, editProduct } from '../../../service/product';
+//import { FaPen } from "react-icons/fa";
+import { createProduct } from '../../../service/product';
 import { useNavigate } from 'react-router-dom';
 import { fetchCategories } from '../../../service/category';
 
@@ -45,7 +45,7 @@ const CreateModal = () => {
                         <input value={price} onChange={e => setPrice(e.target.value)} type="number" placeholder="Price" className="input input-bordered w-full max-w-xs" />
                         <label>Image URL:</label>
                         <select onChange={e => setImageUrl(e.target.value)} className="select w-full max-w-xs">
-                            <option value="/product.jpg">product.jpg</option>
+                            <option value="/image1.jpg">product.jpg</option>
                             <option value="/product2.jpg">product2.jpg</option>
                         </select>
                         <label>Category:</label>
